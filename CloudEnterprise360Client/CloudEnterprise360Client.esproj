@@ -9,5 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\app\shared\components\errors\" />
+    <Folder Include="src\app\shared\models\authentication\" />
   </ItemGroup>
 </Project>

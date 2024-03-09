@@ -4,6 +4,8 @@ import { NotFoundComponent } from './components/errors/not-found/not-found.compo
 import { ValidationMessagesComponent } from './components/errors/validation-messages/validation-messages.component';
 import { RouterModule } from '@angular/router';
 import { MaterialsModule } from './materials/materials.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,11 +17,15 @@ import { MaterialsModule } from './materials/materials.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialsModule
+    MaterialsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     RouterModule,
-    MaterialsModule
+    MaterialsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
