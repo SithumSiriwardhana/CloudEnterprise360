@@ -32,7 +32,59 @@ export class RegisterComponent implements OnInit, OnDestroy {
     });
   }
 
-  get f() { return this.registerForm.controls; }
+  get f()
+  {
+    return this.registerForm.controls;
+  }
+
+  getErrorMessage(controlName: string): string | null {
+    const control = this.registerForm.get(controlName);
+    if (control?.errors) {
+
+      if (controlName === "firstName" || controlName === "lastName") {
+        if (control.errors['required']) {
+          if (controlName === "firstName") {
+            return 'First name is required';
+          } else if (controlName === "lastName") {
+            return 'Last name is required';
+          }
+        }
+        if (control.errors['minlength']) { // Use 'minlength' instead of 'min'
+          return 'Minimum length is three characters';
+        }
+        if (control.errors['maxlength']) { // Use 'maxlength' instead of 'max'
+          return 'Maximum length is fifteen characters';
+        }
+      }
+
+      if (controlName === "email") {
+        if (control.errors['required']) {
+          return 'Email is required';
+        }
+        if (control.errors['email']) {
+          return 'Please enter a valid email address.';
+        }
+        if (control.errors['pattern']) {
+          return 'Email format is invalid.';
+        }
+      }
+
+      if (controlName === "password") {
+        if (control.errors['required']) {
+          return 'Password is required';
+        }
+        if (control.errors['minlength']) { // Use 'minlength' instead of 'min'
+          return 'Minimum length is six characters';
+        }
+        if (control.errors['maxlength']) { // Use 'maxlength' instead of 'max'
+          return 'Maximum length is fifteen characters';
+        }
+      }
+    }
+    return null;
+  }
+
+
 
   register(): void {
     this.submitted = true;
@@ -54,6 +106,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         }
       })
     );
+
   }
 
   ngOnDestroy(): void {

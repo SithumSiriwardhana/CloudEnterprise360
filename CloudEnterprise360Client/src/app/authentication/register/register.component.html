@@ -8,20 +8,28 @@
           </h3>
         </div>
         <div class="form-floating mb-3">
-          <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control" formControlName="firstName"/>
+          <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control" formControlName="firstName"
+                 [ngClass]="{'is-invalid': submitted && f['firstName'].errors}" />
           <label for="firstName">First Name</label>
+          <span class="text-danger" *ngIf="(submitted || f['firstName'].touched) && f['firstName'].errors">{{getErrorMessage('firstName')}}</span>
         </div>
         <div class="form-floating mb-3">
-          <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control" formControlName="lastName"/>
+          <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control" formControlName="lastName"
+                 [ngClass]="{'is-invalid': submitted && f['firstName'].errors}" />
           <label for="lastName">Last Name</label>
+          <span class="text-danger" *ngIf="(submitted || f['lastName'].touched) && f['lastName'].errors">{{getErrorMessage('lastName')}}</span>
         </div>
         <div class="form-floating mb-3">
-          <input id="email" name="email" type="text" placeholder="Email" class="form-control" formControlName="email"/>
+          <input id="email" name="email" type="text" placeholder="Email" class="form-control" formControlName="email"
+                 [ngClass]="{'is-invalid': submitted && f['firstName'].errors}" />
           <label for="email">Email</label>
+          <span class="text-danger" *ngIf="(submitted || f['email'].touched) && f['email'].errors">{{getErrorMessage('email')}}</span>
         </div>
         <div class="form-floating mb-3">
-          <input id="password" name="password" type="password" placeholder="Password" class="form-control" formControlName="password"/>
+          <input id="password" name="password" type="password" placeholder="Password" class="form-control" formControlName="password"
+                 [ngClass]="{'is-invalid': submitted && f['firstName'].errors}" />
           <label for="password">Password</label>
+          <span class="text-danger" *ngIf="(submitted || f['password'].touched) && f['password'].errors">{{getErrorMessage('password')}}</span>
         </div>
         <div class="d-grid mt-4 px-1">
           <button class="btn btn-lg btn-info" type="submit">Create Account</button>
