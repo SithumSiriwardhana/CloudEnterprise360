@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudEnterprise360API", "Cl
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CloudEnterprise360Client", "CloudEnterprise360Client\CloudEnterprise360Client.esproj", "{6C6C1915-797A-40C1-BF50-46EF9B08E49F}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CloudEnterprise360Db", "CloudEnterprise360Db\CloudEnterprise360Db.sqlproj", "{E5EFE91F-1F40-48EC-8654-226CFBAB465F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,12 @@ Global
 		{6C6C1915-797A-40C1-BF50-46EF9B08E49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C6C1915-797A-40C1-BF50-46EF9B08E49F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C6C1915-797A-40C1-BF50-46EF9B08E49F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5EFE91F-1F40-48EC-8654-226CFBAB465F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

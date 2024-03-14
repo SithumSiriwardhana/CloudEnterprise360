@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { MaterialsModule } from './materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationComponent } from './components/modals/notification/notification.component';
 
 
 
 @NgModule({
   declarations: [
     NotFoundComponent,
-    ValidationMessagesComponent
+    ValidationMessagesComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     MaterialsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ValidationMessagesComponent
   ]
 })
 export class SharedModule { }

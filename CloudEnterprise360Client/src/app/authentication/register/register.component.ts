@@ -89,9 +89,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   register(): void {
     this.submitted = true;
 
-    if (this.registerForm.invalid) {
-      return;
-    }
+    //if (this.registerForm.invalid) {
+    //  return;
+    //}
 
     this.subscriptions.add(
       this.authenticationService.register(this.registerForm.value).subscribe({
@@ -102,7 +102,28 @@ export class RegisterComponent implements OnInit, OnDestroy {
           // Optionally redirect the user or display a success message.
         },
         error: (error) => {
-          this.errorMessages = [error.error || 'An unknown error occurred. Please try again later.'];
+          // Clear existing error messages or initialize it as an empty array.
+          this.errorMessages = [];
+
+          // If 'error.error.errors' exists and is an array, use it as the error messages.
+          if (Array.isArray(error.error.errors)) {
+            this.errorMessages = error.error.errors;
+          }
+            // If 'error.error' exists and is an array, use it as the error messages.
+          else if (error.error.length > 0 && Array.isArray(error.error)) {
+            for (let i = 0; i < error.error.length; i++) {
+              if (error.error[i].description) {
+                this.errorMessages.push(error.error[i].description);
+              }
+            }
+          }
+          else if (error.error) {
+            this.errorMessages.push(error.error);
+          }
+          // If neither of the above, add a generic error message.
+          else {
+            this.errorMessages.push('An unknown error occurred. Please try again later.');
+          }
         }
       })
     );
